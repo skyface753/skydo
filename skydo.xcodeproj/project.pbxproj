@@ -1,0 +1,652 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9E6DF8C3295DDBDD00E7A832 /* Appwrite in Frameworks */ = {isa = PBXBuildFile; productRef = 9E6DF8C2295DDBDD00E7A832 /* Appwrite */; };
+		9E8C4351295CCC4E001DFB0D /* skydoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8C4350295CCC4E001DFB0D /* skydoApp.swift */; };
+		9E8C4353295CCC4E001DFB0D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8C4352295CCC4E001DFB0D /* ContentView.swift */; };
+		9E8C4355295CCC50001DFB0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E8C4354295CCC50001DFB0D /* Assets.xcassets */; };
+		9E8C4359295CCC50001DFB0D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E8C4358295CCC50001DFB0D /* Preview Assets.xcassets */; };
+		9E8C4363295CCC50001DFB0D /* skydoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8C4362295CCC50001DFB0D /* skydoTests.swift */; };
+		9E8C436D295CCC50001DFB0D /* skydoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8C436C295CCC50001DFB0D /* skydoUITests.swift */; };
+		9E8C436F295CCC50001DFB0D /* skydoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8C436E295CCC50001DFB0D /* skydoUITestsLaunchTests.swift */; };
+		9E8C437C295CCE51001DFB0D /* apiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8C437B295CCE51001DFB0D /* apiService.swift */; };
+		9E8C437E295CCE72001DFB0D /* todoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8C437D295CCE72001DFB0D /* todoViewModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9E8C435F295CCC50001DFB0D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9E8C4345295CCC4E001DFB0D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9E8C434C295CCC4E001DFB0D;
+			remoteInfo = skydo;
+		};
+		9E8C4369295CCC50001DFB0D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9E8C4345295CCC4E001DFB0D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9E8C434C295CCC4E001DFB0D;
+			remoteInfo = skydo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9E8C434D295CCC4E001DFB0D /* skydo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = skydo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E8C4350295CCC4E001DFB0D /* skydoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = skydoApp.swift; sourceTree = "<group>"; };
+		9E8C4352295CCC4E001DFB0D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9E8C4354295CCC50001DFB0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9E8C4356295CCC50001DFB0D /* skydo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = skydo.entitlements; sourceTree = "<group>"; };
+		9E8C4358295CCC50001DFB0D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9E8C435E295CCC50001DFB0D /* skydoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = skydoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E8C4362295CCC50001DFB0D /* skydoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = skydoTests.swift; sourceTree = "<group>"; };
+		9E8C4368295CCC50001DFB0D /* skydoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = skydoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E8C436C295CCC50001DFB0D /* skydoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = skydoUITests.swift; sourceTree = "<group>"; };
+		9E8C436E295CCC50001DFB0D /* skydoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = skydoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9E8C437B295CCE51001DFB0D /* apiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apiService.swift; sourceTree = "<group>"; };
+		9E8C437D295CCE72001DFB0D /* todoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todoViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9E8C434A295CCC4E001DFB0D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E6DF8C3295DDBDD00E7A832 /* Appwrite in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9E8C435B295CCC50001DFB0D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9E8C4365295CCC50001DFB0D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9E8C4344295CCC4E001DFB0D = {
+			isa = PBXGroup;
+			children = (
+				9E8C434F295CCC4E001DFB0D /* skydo */,
+				9E8C4361295CCC50001DFB0D /* skydoTests */,
+				9E8C436B295CCC50001DFB0D /* skydoUITests */,
+				9E8C434E295CCC4E001DFB0D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9E8C434E295CCC4E001DFB0D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9E8C434D295CCC4E001DFB0D /* skydo.app */,
+				9E8C435E295CCC50001DFB0D /* skydoTests.xctest */,
+				9E8C4368295CCC50001DFB0D /* skydoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9E8C434F295CCC4E001DFB0D /* skydo */ = {
+			isa = PBXGroup;
+			children = (
+				9E8C4350295CCC4E001DFB0D /* skydoApp.swift */,
+				9E8C437D295CCE72001DFB0D /* todoViewModel.swift */,
+				9E8C4352295CCC4E001DFB0D /* ContentView.swift */,
+				9E8C4354295CCC50001DFB0D /* Assets.xcassets */,
+				9E8C4356295CCC50001DFB0D /* skydo.entitlements */,
+				9E8C4357295CCC50001DFB0D /* Preview Content */,
+				9E8C437B295CCE51001DFB0D /* apiService.swift */,
+			);
+			path = skydo;
+			sourceTree = "<group>";
+		};
+		9E8C4357295CCC50001DFB0D /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				9E8C4358295CCC50001DFB0D /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9E8C4361295CCC50001DFB0D /* skydoTests */ = {
+			isa = PBXGroup;
+			children = (
+				9E8C4362295CCC50001DFB0D /* skydoTests.swift */,
+			);
+			path = skydoTests;
+			sourceTree = "<group>";
+		};
+		9E8C436B295CCC50001DFB0D /* skydoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9E8C436C295CCC50001DFB0D /* skydoUITests.swift */,
+				9E8C436E295CCC50001DFB0D /* skydoUITestsLaunchTests.swift */,
+			);
+			path = skydoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9E8C434C295CCC4E001DFB0D /* skydo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9E8C4372295CCC50001DFB0D /* Build configuration list for PBXNativeTarget "skydo" */;
+			buildPhases = (
+				9E8C4349295CCC4E001DFB0D /* Sources */,
+				9E8C434A295CCC4E001DFB0D /* Frameworks */,
+				9E8C434B295CCC4E001DFB0D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = skydo;
+			packageProductDependencies = (
+				9E6DF8C2295DDBDD00E7A832 /* Appwrite */,
+			);
+			productName = skydo;
+			productReference = 9E8C434D295CCC4E001DFB0D /* skydo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9E8C435D295CCC50001DFB0D /* skydoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9E8C4375295CCC50001DFB0D /* Build configuration list for PBXNativeTarget "skydoTests" */;
+			buildPhases = (
+				9E8C435A295CCC50001DFB0D /* Sources */,
+				9E8C435B295CCC50001DFB0D /* Frameworks */,
+				9E8C435C295CCC50001DFB0D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9E8C4360295CCC50001DFB0D /* PBXTargetDependency */,
+			);
+			name = skydoTests;
+			productName = skydoTests;
+			productReference = 9E8C435E295CCC50001DFB0D /* skydoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9E8C4367295CCC50001DFB0D /* skydoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9E8C4378295CCC50001DFB0D /* Build configuration list for PBXNativeTarget "skydoUITests" */;
+			buildPhases = (
+				9E8C4364295CCC50001DFB0D /* Sources */,
+				9E8C4365295CCC50001DFB0D /* Frameworks */,
+				9E8C4366295CCC50001DFB0D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9E8C436A295CCC50001DFB0D /* PBXTargetDependency */,
+			);
+			name = skydoUITests;
+			productName = skydoUITests;
+			productReference = 9E8C4368295CCC50001DFB0D /* skydoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9E8C4345295CCC4E001DFB0D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					9E8C434C295CCC4E001DFB0D = {
+						CreatedOnToolsVersion = 14.0;
+					};
+					9E8C435D295CCC50001DFB0D = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = 9E8C434C295CCC4E001DFB0D;
+					};
+					9E8C4367295CCC50001DFB0D = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = 9E8C434C295CCC4E001DFB0D;
+					};
+				};
+			};
+			buildConfigurationList = 9E8C4348295CCC4E001DFB0D /* Build configuration list for PBXProject "skydo" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9E8C4344295CCC4E001DFB0D;
+			packageReferences = (
+				9E6DF8C1295DDBDD00E7A832 /* XCRemoteSwiftPackageReference "sdk-for-apple" */,
+			);
+			productRefGroup = 9E8C434E295CCC4E001DFB0D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9E8C434C295CCC4E001DFB0D /* skydo */,
+				9E8C435D295CCC50001DFB0D /* skydoTests */,
+				9E8C4367295CCC50001DFB0D /* skydoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9E8C434B295CCC4E001DFB0D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E8C4359295CCC50001DFB0D /* Preview Assets.xcassets in Resources */,
+				9E8C4355295CCC50001DFB0D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9E8C435C295CCC50001DFB0D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9E8C4366295CCC50001DFB0D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9E8C4349295CCC4E001DFB0D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E8C437E295CCE72001DFB0D /* todoViewModel.swift in Sources */,
+				9E8C437C295CCE51001DFB0D /* apiService.swift in Sources */,
+				9E8C4353295CCC4E001DFB0D /* ContentView.swift in Sources */,
+				9E8C4351295CCC4E001DFB0D /* skydoApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9E8C435A295CCC50001DFB0D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E8C4363295CCC50001DFB0D /* skydoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9E8C4364295CCC50001DFB0D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E8C436D295CCC50001DFB0D /* skydoUITests.swift in Sources */,
+				9E8C436F295CCC50001DFB0D /* skydoUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9E8C4360295CCC50001DFB0D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9E8C434C295CCC4E001DFB0D /* skydo */;
+			targetProxy = 9E8C435F295CCC50001DFB0D /* PBXContainerItemProxy */;
+		};
+		9E8C436A295CCC50001DFB0D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9E8C434C295CCC4E001DFB0D /* skydo */;
+			targetProxy = 9E8C4369295CCC50001DFB0D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		9E8C4370295CCC50001DFB0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9E8C4371295CCC50001DFB0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		9E8C4373295CCC50001DFB0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = skydo/skydo.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"skydo/Preview Content\"";
+				DEVELOPMENT_TEAM = 4TWQ3RV282;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.skyface753.skydo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9E8C4374295CCC50001DFB0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = skydo/skydo.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"skydo/Preview Content\"";
+				DEVELOPMENT_TEAM = 4TWQ3RV282;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.skyface753.skydo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9E8C4376295CCC50001DFB0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4TWQ3RV282;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.skyface753.skydoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/skydo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/skydo";
+			};
+			name = Debug;
+		};
+		9E8C4377295CCC50001DFB0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4TWQ3RV282;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.skyface753.skydoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/skydo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/skydo";
+			};
+			name = Release;
+		};
+		9E8C4379295CCC50001DFB0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4TWQ3RV282;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.skyface753.skydoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = skydo;
+			};
+			name = Debug;
+		};
+		9E8C437A295CCC50001DFB0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4TWQ3RV282;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.skyface753.skydoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = skydo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9E8C4348295CCC4E001DFB0D /* Build configuration list for PBXProject "skydo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E8C4370295CCC50001DFB0D /* Debug */,
+				9E8C4371295CCC50001DFB0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9E8C4372295CCC50001DFB0D /* Build configuration list for PBXNativeTarget "skydo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E8C4373295CCC50001DFB0D /* Debug */,
+				9E8C4374295CCC50001DFB0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9E8C4375295CCC50001DFB0D /* Build configuration list for PBXNativeTarget "skydoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E8C4376295CCC50001DFB0D /* Debug */,
+				9E8C4377295CCC50001DFB0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9E8C4378295CCC50001DFB0D /* Build configuration list for PBXNativeTarget "skydoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E8C4379295CCC50001DFB0D /* Debug */,
+				9E8C437A295CCC50001DFB0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9E6DF8C1295DDBDD00E7A832 /* XCRemoteSwiftPackageReference "sdk-for-apple" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/appwrite/sdk-for-apple";
+			requirement = {
+				kind = exactVersion;
+				version = 1.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9E6DF8C2295DDBDD00E7A832 /* Appwrite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9E6DF8C1295DDBDD00E7A832 /* XCRemoteSwiftPackageReference "sdk-for-apple" */;
+			productName = Appwrite;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 9E8C4345295CCC4E001DFB0D /* Project object */;
+}
