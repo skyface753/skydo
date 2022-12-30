@@ -13,6 +13,7 @@
 		9E6DF8CB295EF3B300E7A832 /* listTodos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6DF8CA295EF3B300E7A832 /* listTodos.swift */; };
 		9E6DF8CD295EF5C300E7A832 /* SingleTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6DF8CC295EF5C300E7A832 /* SingleTodoView.swift */; };
 		9E6DF8CF295F19CF00E7A832 /* ArchiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6DF8CE295F19CF00E7A832 /* ArchiveView.swift */; };
+		9E863CEC295FA0C9000F7243 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E863CEB295FA0C9000F7243 /* RegisterView.swift */; };
 		9E8C4351295CCC4E001DFB0D /* skydoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8C4350295CCC4E001DFB0D /* skydoApp.swift */; };
 		9E8C4353295CCC4E001DFB0D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8C4352295CCC4E001DFB0D /* MainView.swift */; };
 		9E8C4355295CCC50001DFB0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E8C4354295CCC50001DFB0D /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		9E6DF8CA295EF3B300E7A832 /* listTodos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listTodos.swift; sourceTree = "<group>"; };
 		9E6DF8CC295EF5C300E7A832 /* SingleTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTodoView.swift; sourceTree = "<group>"; };
 		9E6DF8CE295F19CF00E7A832 /* ArchiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveView.swift; sourceTree = "<group>"; };
+		9E863CEB295FA0C9000F7243 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		9E8C434D295CCC4E001DFB0D /* skydo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = skydo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E8C4350295CCC4E001DFB0D /* skydoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = skydoApp.swift; sourceTree = "<group>"; };
 		9E8C4352295CCC4E001DFB0D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				9E8C437B295CCE51001DFB0D /* ApiService.swift */,
 				9E6DF8C4295EE7FA00E7A832 /* LoginView.swift */,
 				9E6DF8CE295F19CF00E7A832 /* ArchiveView.swift */,
+				9E863CEB295FA0C9000F7243 /* RegisterView.swift */,
 			);
 			path = skydo;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E8C437E295CCE72001DFB0D /* todoViewModel.swift in Sources */,
+				9E863CEC295FA0C9000F7243 /* RegisterView.swift in Sources */,
 				9E6DF8CB295EF3B300E7A832 /* listTodos.swift in Sources */,
 				9E6DF8CD295EF5C300E7A832 /* SingleTodoView.swift in Sources */,
 				9E6DF8C9295EF31B00E7A832 /* createTodo.swift in Sources */,

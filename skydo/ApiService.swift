@@ -165,4 +165,14 @@ struct APIService {
             throw error
         }
     }
+    
+    static func checkLoginStatus() async -> Bool {
+        let account = Account(appwriteClient)
+        do{
+            try await  account.get()
+            return true
+        }catch{
+            return false
+        }
+    }
 }

@@ -82,7 +82,7 @@ struct ContentView: View {
                             }.onAppear{
                                 print("On Appear Login")
                                 Task{
-                                    isLoggedIn = await checkLoginStatus()
+                                    isLoggedIn = await APIService.checkLoginStatus()
                                 }
                             }
                             
@@ -97,22 +97,14 @@ struct ContentView: View {
             .onAppear{
                 print("On Appear")
                 Task{
-                    isLoggedIn = await checkLoginStatus()
+                    isLoggedIn = await APIService.checkLoginStatus()
                     
                 }
             }
     }
 }
 
-func checkLoginStatus() async -> Bool {
-    let account = Account(appwriteClient)
-    do{
-        try await  account.get()
-        return true
-    }catch{
-        return false
-    }
-}
+
 
 struct TodoListItem: View {
     @Environment(\.managedObjectContext) private var viewContext
