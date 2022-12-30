@@ -19,7 +19,7 @@ I wanted to build a simple app that I could use to learn SwiftUI. I also wanted 
 
 ### Flutter
 
-- 1 hour (As simple and fast as possible)
+- 36 minutes (As simple and fast as possible - with Github Copilot)
 
 ## Features
 
