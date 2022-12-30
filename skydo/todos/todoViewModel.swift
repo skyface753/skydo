@@ -14,16 +14,21 @@ class TodoViewModel: ObservableObject {
     @Published var errorMessage = ""
     @Published var hasError = false
     
-
+    var listArchived: Bool
+    
+    init(listArchived: Bool) {
+        self.listArchived = listArchived
+    }
+    
     func getTodos() async {
-        guard let data = try?  await  APIService().getTodos() else {
+        guard let data = try?  await  APIService().getTodos(listArchived: self.listArchived) else {
             self.todos = []
             self.hasError = true
             self.errorMessage  = "Server Error"
             return
         }
-        
         self.todos = data
         
     }
 }
+

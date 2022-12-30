@@ -8,14 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		9E6DF8C3295DDBDD00E7A832 /* Appwrite in Frameworks */ = {isa = PBXBuildFile; productRef = 9E6DF8C2295DDBDD00E7A832 /* Appwrite */; };
+		9E6DF8C5295EE7FB00E7A832 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6DF8C4295EE7FA00E7A832 /* LoginView.swift */; };
+		9E6DF8C9295EF31B00E7A832 /* createTodo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6DF8C8295EF31B00E7A832 /* createTodo.swift */; };
+		9E6DF8CB295EF3B300E7A832 /* listTodos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6DF8CA295EF3B300E7A832 /* listTodos.swift */; };
+		9E6DF8CD295EF5C300E7A832 /* SingleTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6DF8CC295EF5C300E7A832 /* SingleTodoView.swift */; };
+		9E6DF8CF295F19CF00E7A832 /* ArchiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6DF8CE295F19CF00E7A832 /* ArchiveView.swift */; };
 		9E8C4351295CCC4E001DFB0D /* skydoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8C4350295CCC4E001DFB0D /* skydoApp.swift */; };
-		9E8C4353295CCC4E001DFB0D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8C4352295CCC4E001DFB0D /* ContentView.swift */; };
+		9E8C4353295CCC4E001DFB0D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8C4352295CCC4E001DFB0D /* MainView.swift */; };
 		9E8C4355295CCC50001DFB0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E8C4354295CCC50001DFB0D /* Assets.xcassets */; };
 		9E8C4359295CCC50001DFB0D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E8C4358295CCC50001DFB0D /* Preview Assets.xcassets */; };
 		9E8C4363295CCC50001DFB0D /* skydoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8C4362295CCC50001DFB0D /* skydoTests.swift */; };
 		9E8C436D295CCC50001DFB0D /* skydoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8C436C295CCC50001DFB0D /* skydoUITests.swift */; };
 		9E8C436F295CCC50001DFB0D /* skydoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8C436E295CCC50001DFB0D /* skydoUITestsLaunchTests.swift */; };
-		9E8C437C295CCE51001DFB0D /* apiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8C437B295CCE51001DFB0D /* apiService.swift */; };
+		9E8C437C295CCE51001DFB0D /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8C437B295CCE51001DFB0D /* ApiService.swift */; };
 		9E8C437E295CCE72001DFB0D /* todoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8C437D295CCE72001DFB0D /* todoViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,9 +42,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9E6DF8C4295EE7FA00E7A832 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		9E6DF8C8295EF31B00E7A832 /* createTodo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createTodo.swift; sourceTree = "<group>"; };
+		9E6DF8CA295EF3B300E7A832 /* listTodos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listTodos.swift; sourceTree = "<group>"; };
+		9E6DF8CC295EF5C300E7A832 /* SingleTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTodoView.swift; sourceTree = "<group>"; };
+		9E6DF8CE295F19CF00E7A832 /* ArchiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveView.swift; sourceTree = "<group>"; };
 		9E8C434D295CCC4E001DFB0D /* skydo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = skydo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E8C4350295CCC4E001DFB0D /* skydoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = skydoApp.swift; sourceTree = "<group>"; };
-		9E8C4352295CCC4E001DFB0D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9E8C4352295CCC4E001DFB0D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		9E8C4354295CCC50001DFB0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E8C4356295CCC50001DFB0D /* skydo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = skydo.entitlements; sourceTree = "<group>"; };
 		9E8C4358295CCC50001DFB0D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -48,7 +58,7 @@
 		9E8C4368295CCC50001DFB0D /* skydoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = skydoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E8C436C295CCC50001DFB0D /* skydoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = skydoUITests.swift; sourceTree = "<group>"; };
 		9E8C436E295CCC50001DFB0D /* skydoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = skydoUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		9E8C437B295CCE51001DFB0D /* apiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apiService.swift; sourceTree = "<group>"; };
+		9E8C437B295CCE51001DFB0D /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		9E8C437D295CCE72001DFB0D /* todoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todoViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +88,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9E6DF8C7295EF28F00E7A832 /* todos */ = {
+			isa = PBXGroup;
+			children = (
+				9E8C437D295CCE72001DFB0D /* todoViewModel.swift */,
+				9E6DF8C8295EF31B00E7A832 /* createTodo.swift */,
+				9E6DF8CA295EF3B300E7A832 /* listTodos.swift */,
+				9E6DF8CC295EF5C300E7A832 /* SingleTodoView.swift */,
+			);
+			path = todos;
+			sourceTree = "<group>";
+		};
 		9E8C4344295CCC4E001DFB0D = {
 			isa = PBXGroup;
 			children = (
@@ -101,13 +122,15 @@
 		9E8C434F295CCC4E001DFB0D /* skydo */ = {
 			isa = PBXGroup;
 			children = (
+				9E6DF8C7295EF28F00E7A832 /* todos */,
 				9E8C4350295CCC4E001DFB0D /* skydoApp.swift */,
-				9E8C437D295CCE72001DFB0D /* todoViewModel.swift */,
-				9E8C4352295CCC4E001DFB0D /* ContentView.swift */,
+				9E8C4352295CCC4E001DFB0D /* MainView.swift */,
 				9E8C4354295CCC50001DFB0D /* Assets.xcassets */,
 				9E8C4356295CCC50001DFB0D /* skydo.entitlements */,
 				9E8C4357295CCC50001DFB0D /* Preview Content */,
-				9E8C437B295CCE51001DFB0D /* apiService.swift */,
+				9E8C437B295CCE51001DFB0D /* ApiService.swift */,
+				9E6DF8C4295EE7FA00E7A832 /* LoginView.swift */,
+				9E6DF8CE295F19CF00E7A832 /* ArchiveView.swift */,
 			);
 			path = skydo;
 			sourceTree = "<group>";
@@ -274,8 +297,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E8C437E295CCE72001DFB0D /* todoViewModel.swift in Sources */,
-				9E8C437C295CCE51001DFB0D /* apiService.swift in Sources */,
-				9E8C4353295CCC4E001DFB0D /* ContentView.swift in Sources */,
+				9E6DF8CB295EF3B300E7A832 /* listTodos.swift in Sources */,
+				9E6DF8CD295EF5C300E7A832 /* SingleTodoView.swift in Sources */,
+				9E6DF8C9295EF31B00E7A832 /* createTodo.swift in Sources */,
+				9E8C437C295CCE51001DFB0D /* ApiService.swift in Sources */,
+				9E8C4353295CCC4E001DFB0D /* MainView.swift in Sources */,
+				9E6DF8C5295EE7FB00E7A832 /* LoginView.swift in Sources */,
+				9E6DF8CF295F19CF00E7A832 /* ArchiveView.swift in Sources */,
 				9E8C4351295CCC4E001DFB0D /* skydoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
