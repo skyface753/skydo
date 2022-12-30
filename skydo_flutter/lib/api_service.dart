@@ -174,4 +174,31 @@ class ApiService {
       return false;
     }
   }
+
+  static Future<bool> register(String email, String password) async {
+    init();
+    Account account = Account(client);
+    try {
+      models.Account acc = await account.create(
+          email: email,
+          password: password,
+          name: email.split('@')[0],
+          userId: ID.unique());
+      print(acc);
+      return true;
+    } catch (e) {
+      print(e);
+      return false;
+    }
+  }
+
+  static Future checkLogin() async {
+    init();
+    Account account = Account(client);
+    try {
+      models.Account acc = await account.get();
+    } catch (e) {
+      rethrow;
+    }
+  }
 }

@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:skydo_flutter/api_service.dart';
 
-class LoginPage extends StatefulWidget {
-  static String routeName = '/login';
-  const LoginPage({super.key});
-
+class RegisterPage extends StatefulWidget {
+  static String routeName = '/register';
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  _RegisterPageState createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
+  TextEditingController _confirmPasswordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Login'),
+        title: const Text('Register'),
       ),
       body: Center(
           child: Column(
@@ -25,7 +24,7 @@ class _LoginPageState extends State<LoginPage> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: const Text(
-              'Login to Skydo',
+              'Register for Skydo',
               style: TextStyle(fontSize: 24),
             ),
           ),
@@ -50,33 +49,40 @@ class _LoginPageState extends State<LoginPage> {
               autocorrect: false,
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              controller: _confirmPasswordController,
+              decoration: InputDecoration(
+                hintText: 'Confirm Password',
+              ),
+              obscureText: true,
+              enableSuggestions: false,
+              autocorrect: false,
+            ),
+          ),
           ElevatedButton(
             onPressed: () async {
-              final success = await ApiService.login(
-                  _emailController.text, _passwordController.text);
-              if (success) {
-                Navigator.pop(context);
-              } else {
+              if (_passwordController.text != _confirmPasswordController.text) {
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(
-                    content: Text('Login failed'),
+                    content: Text('Passwords do not match'),
                   ),
                 );
-              }
-            },
-            child: const Text('Login'),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          TextButton(
-            onPressed: () async {
-              await Navigator.pushNamed(context, '/register');
-              try {
-                await ApiService.checkLogin();
-                Navigator.pop(context);
-              } catch (e) {
-                print(e);
+              } else {
+                final success = await ApiService.register(
+                    _emailController.text, _passwordController.text);
+                if (success) {
+                  await ApiService.login(
+                      _emailController.text, _passwordController.text);
+                  Navigator.pop(context);
+                } else {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Registration failed'),
+                    ),
+                  );
+                }
               }
             },
             child: const Text('Register'),
