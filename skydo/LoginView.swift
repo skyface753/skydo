@@ -20,11 +20,11 @@ struct LoginView: View{
     var body: some View{
         VStack(alignment: .leading, spacing: 15){
             Text("SkyDo")
-                .font(.largeTitle).foregroundColor(Color.white)
-                .padding([.top, .bottom], 40)
+                .font(.largeTitle).foregroundColor(Color.green)
+                .padding([.top, .bottom], 30)
             Image("Logo")
                 .resizable()
-                .frame(width: 250, height: 250)
+                .frame(width: 300, height: 250)
                 .clipShape(Circle())
                 .overlay(Circle().stroke(Color.white, lineWidth: 4))
                 .shadow(radius: 10)

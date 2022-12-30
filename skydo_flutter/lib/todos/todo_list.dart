@@ -106,11 +106,7 @@ class _TodoListPageState extends State<TodoListPaage> {
               });
             });
           },
-          tileColor: todo.completed
-              ? Colors.green[100]
-              : !todo.isActive
-                  ? Colors.red[100]
-                  : null,
+          tileColor: !todo.isActive ? Colors.grey.withOpacity(0.5) : null,
           leading: Icon(
             todo.completed ? Icons.check_box : Icons.check_box_outline_blank,
             color: todo.completed ? Colors.green : null,

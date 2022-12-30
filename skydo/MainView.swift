@@ -69,7 +69,7 @@ struct ContentView: View {
                                 Task{
                                     do{
                                         try await APIService.logout()
-                                        
+                                        isLoggedIn = false
                                     }catch{
                                         hasError = true
                                         errorMessage = error.localizedDescription

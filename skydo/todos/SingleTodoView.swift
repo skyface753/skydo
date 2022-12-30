@@ -42,6 +42,7 @@ struct SingleTodoView: View {
         }.alert(isPresented: $showingAlert) {
             Alert(title: Text("Important message"), message: Text("Wear sunscreen"), dismissButton: .default(Text("Got it!")))
         }
+        .padding(10)
         .onAppear{
             print("Appear" + todo.title)
             title = todo.title

@@ -22,20 +22,33 @@ class _LoginPageState extends State<LoginPage> {
       body: Center(
           child: Column(
         children: [
-          TextField(
-            controller: _emailController,
-            decoration: InputDecoration(
-              hintText: 'Email',
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: const Text(
+              'Login to Skydo',
+              style: TextStyle(fontSize: 24),
             ),
           ),
-          TextField(
-            controller: _passwordController,
-            decoration: InputDecoration(
-              hintText: 'Password',
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              controller: _emailController,
+              decoration: InputDecoration(
+                hintText: 'Email',
+              ),
             ),
-            obscureText: true,
-            enableSuggestions: false,
-            autocorrect: false,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              controller: _passwordController,
+              decoration: InputDecoration(
+                hintText: 'Password',
+              ),
+              obscureText: true,
+              enableSuggestions: false,
+              autocorrect: false,
+            ),
           ),
           ElevatedButton(
             onPressed: () async {

@@ -46,13 +46,52 @@ class _CreateTodoPageState extends State<CreateTodoPage> {
         title: itemId == null
             ? const Text('Create Todo')
             : Text('Edit Todo: ${itemId!}'),
+        actions: [
+          IconButton(
+              // child: Text(itemId == null ? 'Create' : 'Update'),
+              icon: Icon(Icons.save),
+              onPressed: () async {
+                if (!_formKey.currentState!.validate()) {
+                  return;
+                }
+                if (itemId != null) {
+                  if (await ApiService.updateTodo(
+                      id: itemId!,
+                      title: _titleController.text,
+                      desc: _descController.text,
+                      remindTime: _withReminder ? _reminderDate : null,
+                      completed: _completed)) {
+                    Navigator.pop(context);
+                  } else {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text('Update failed'),
+                      ),
+                    );
+                  }
+                  return;
+                }
+                if (await ApiService.createTodo(
+                    title: _titleController.text,
+                    desc: _descController.text,
+                    remindTime: _withReminder ? _reminderDate : null)) {
+                  Navigator.pop(context);
+                } else {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Create failed'),
+                    ),
+                  );
+                }
+              })
+        ],
       ),
       body: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Form(
             key: _formKey,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 TextFormField(
                   controller: _titleController,
@@ -71,40 +110,53 @@ class _CreateTodoPageState extends State<CreateTodoPage> {
                 ),
                 Container(height: 8.0),
                 itemId != null
-                    ? Row(children: [
-                        Text('Completed: '),
-                        Switch(
-                            value: _completed,
-                            onChanged: (value) {
-                              setState(() {
-                                _completed = value;
-                              });
-                            }),
-                      ])
+                    ? Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                            Text('Completed: '),
+                            Switch(
+                                value: _completed,
+                                onChanged: (value) {
+                                  setState(() {
+                                    _completed = value;
+                                  });
+                                }),
+                          ])
                     : Container(),
                 // Date and Time Picket
-                Row(
-                  children: [
-                    Text('With Reminder: '),
-                    Switch(
-                        value: _withReminder,
-                        onChanged: (value) {
-                          setState(() {
-                            _withReminder = value;
-                            if (_withReminder && _reminderDate == null) {
-                              _reminderDate = DateTime.now();
-                            }
-                          });
-                        }),
-                  ],
+                Container(
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('With Reminder: '),
+                      // Spacer
+
+                      Switch(
+                          value: _withReminder,
+                          onChanged: (value) {
+                            setState(() {
+                              _withReminder = value;
+                              if (_withReminder && _reminderDate == null) {
+                                _reminderDate = DateTime.now();
+                              }
+                            });
+                          }),
+                    ],
+                  ),
                 ),
                 _withReminder
-                    ? Row(
+                    ? Container(
+                        // color: Colors.yellow,
+                        child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text('Reminder: '),
                           Text(_reminderDate == null
                               ? 'Not set'
                               : '${_reminderDate!.day}/${_reminderDate!.month}/${_reminderDate!.year} ${_reminderDate!.hour}:${_reminderDate!.minute}'),
+                          SizedBox(width: 8.0),
                           ElevatedButton(
                               onPressed: () {
                                 DatePicker.showDateTimePicker(context,
@@ -119,44 +171,9 @@ class _CreateTodoPageState extends State<CreateTodoPage> {
                               },
                               child: const Text('Set'))
                         ],
-                      )
+                      ))
                     : Container(),
-                ElevatedButton(
-                    child: Text(itemId == null ? 'Create' : 'Update'),
-                    onPressed: () async {
-                      if (!_formKey.currentState!.validate()) {
-                        return;
-                      }
-                      if (itemId != null) {
-                        if (await ApiService.updateTodo(
-                            id: itemId!,
-                            title: _titleController.text,
-                            desc: _descController.text,
-                            remindTime: _withReminder ? _reminderDate : null,
-                            completed: _completed)) {
-                          Navigator.pop(context);
-                        } else {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                              content: Text('Update failed'),
-                            ),
-                          );
-                        }
-                        return;
-                      }
-                      if (await ApiService.createTodo(
-                          title: _titleController.text,
-                          desc: _descController.text,
-                          remindTime: _withReminder ? _reminderDate : null)) {
-                        Navigator.pop(context);
-                      } else {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            content: Text('Create failed'),
-                          ),
-                        );
-                      }
-                    })
+                SizedBox(height: 8.0),
               ],
             ),
           )),
