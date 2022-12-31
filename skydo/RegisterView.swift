@@ -16,6 +16,7 @@ struct RegisterView: View {
     @State private var passwordConfirm: String = ""
     @State private var hasError: Bool = false
     @State private var errorMessage: String = ""
+    @State private var registerSuccess: Bool = false
     
     // MARK: - View
     var body: some View{
@@ -49,8 +50,9 @@ struct RegisterView: View {
                     let account = Account(appwriteClient)
                     do {
                         let register = try await account.create(userId: ID.unique(), email: email, password: password)
-                        
-                        self.presentationMode.wrappedValue.dismiss()
+                        let login = try await account.createEmailSession(email: email, password: password)
+                        print(try await APIService.createVerification())
+                        registerSuccess = true
                         print(String(describing: register.toMap()))
                     } catch {
                         hasError = true
@@ -72,6 +74,10 @@ struct RegisterView: View {
         }.padding([.leading, .trailing], 27.5)
             .alert(isPresented: $hasError){
                 Alert(title: Text(errorMessage))
+            }.alert("Register success. Please login in now", isPresented: $registerSuccess){
+                Button("OK", role: .cancel){
+                    self.presentationMode.wrappedValue.dismiss()
+                }
             }
     }
         

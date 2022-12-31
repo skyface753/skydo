@@ -169,10 +169,20 @@ struct APIService {
     static func checkLoginStatus() async -> Bool {
         let account = Account(appwriteClient)
         do{
-            try await  account.get()
+            _ = try await  account.get()
             return true
         }catch{
             return false
         }
+    }
+    
+    static func createVerification()async throws{
+        let account = Account(appwriteClient)
+        _ = try await account.createVerification(url: "https://skydo.skyface.de/verify")
+    }
+    
+    static func verifyConfirm(userId: String, secret: String) async throws{
+        let account = Account(appwriteClient)
+        _ = try await account.updateVerification(userId: userId, secret: secret)
     }
 }

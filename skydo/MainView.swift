@@ -17,12 +17,18 @@ let appwriteClient = Client()
     .setProject("63ad9f6f86df3acb7d0a")
 
 struct ContentView: View {
+    @Environment(\.scenePhase) private var scenePhase
+
     @StateObject var vm = TodoViewModel(listArchived: false)
     @State private var isLoggedIn = false
     @State private var showingCredits = false
     @State private var hasError = false
     @State private var errorMessage = ""
     @State private var isLoading = true
+    
+    @State private var showVerificationMessage = false
+    @State private var verifySuccessed = false
+    @State private var verificationMessage = ""
     
     var body: some View {
         NavigationView {
@@ -100,6 +106,53 @@ struct ContentView: View {
                     isLoggedIn = await APIService.checkLoginStatus()
                     
                 }
+            }
+            .onOpenURL { URL in
+                // Process the URL
+                print("Received URL: " + URL.absoluteString)
+               
+                
+                let urlComponents = URLComponents(url: URL, resolvingAgainstBaseURL: false)
+                let queryItems = urlComponents?.queryItems
+                let userId = queryItems?.first(where: { $0.name == "userId" })?.value
+                let secret = queryItems?.first(where: { $0.name == "secret" })?.value
+                
+                if(userId == nil || secret == nil){
+                    verificationMessage = "Please check the Link"
+                    showVerificationMessage = true
+                    return
+                }
+                
+                Task{
+                    do{
+                        try await APIService.verifyConfirm(userId: userId!, secret: secret!)
+                        verificationMessage = "Verify success"
+                        verifySuccessed = true
+                        showVerificationMessage = true
+                    }catch{
+                        verificationMessage = error.localizedDescription
+                        showVerificationMessage = true
+                    }
+                    
+                }
+            }.alert(verificationMessage, isPresented: $showVerificationMessage){
+                Button("Ok", role: .cancel){
+                    
+                }
+                if !verifySuccessed{
+                    
+                    
+                    Button("Resend", role: .destructive){
+                        Task{
+                            do{
+                                try await APIService.createVerification()
+                            }catch{
+                                verificationMessage = error.localizedDescription
+                                verifySuccessed = false
+                                showVerificationMessage = true
+                            }
+                        }
+                    }}
             }
     }
 }
