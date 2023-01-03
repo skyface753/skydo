@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct ArchiveView: View {
+/*struct ArchiveView: View {
     @StateObject var vm = TodoViewModel(listArchived: true)
     @State private var isLoading = true
-    
+
     var body: some View {
         if isLoading{
             ProgressView()
@@ -34,10 +34,33 @@ struct ArchiveView: View {
         }
         .listStyle(PlainListStyle())
     }
+}*/
+
+struct ArchiveView: View {
+  @StateObject var vm = TodoViewModel(listArchived: true)
+  @State private var showRestoreAllAlert = false
+  var body: some View {
+    VStack {
+
+      Button("Restore all") {
+        showRestoreAllAlert = true
+      }
+      TodoListComp(vm: vm).navigationTitle("Archiv")
+    }.alert(isPresented: $showRestoreAllAlert) {
+      Alert(
+        title: Text("Restore all"), message: Text("Are you sure you want to restore all todos?"),
+        primaryButton: .destructive(Text("Restore all")) {
+          Task {
+            await vm.restoreAllFromArchive()
+            await vm.getTodos()
+          }
+        }, secondaryButton: .cancel())
+    }
+  }
 }
 
 struct ArchiveView_Previews: PreviewProvider {
-    static var previews: some View {
-        ArchiveView()
-    }
+  static var previews: some View {
+    ArchiveView()
+  }
 }
