@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:skydo_flutter/LoginPage.dart';
 import 'package:skydo_flutter/RegisterPage.dart';
-import 'package:skydo_flutter/todos/create_todo.dart';
+import 'package:skydo_flutter/todos/single_todo.dart';
 import 'package:skydo_flutter/todos/todo_list.dart';
 
 void main() {
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => TodoListPaage(),
         TodoListPaage.routeName: (context) => TodoListPaage(),
         LoginPage.routeName: (context) => const LoginPage(),
-        CreateTodoPage.routeName: (context) => CreateTodoPage(),
+        SingleTodoPage.routeName: (context) => SingleTodoPage(),
         RegisterPage.routeName: (context) => RegisterPage(),
       },
     );

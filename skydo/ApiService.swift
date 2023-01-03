@@ -8,6 +8,41 @@
 import Foundation
 import Appwrite
 
+enum TodoPriority: String, CaseIterable{
+    case Without = "Without"
+    case Low = "Low"
+    case Normal = "Normal"
+    case High = "High"
+}
+
+func stringToPriority(prioStr: String) -> TodoPriority {
+    switch prioStr{
+    case "Without":
+        return .Without
+    case "Low":
+        return .Low
+    case "Normal":
+        return .Normal
+    case "High":
+        return .High
+    default:
+        return .Without
+    }
+}
+
+/*func PrioToString(prio: TodoPriority) -> String{
+    switch prio{
+    case .Without:
+        return "Without"
+    case .Low:
+        return "Low"
+    case .Normal:
+        return "Normal"
+    case .High:
+        return "High"
+    }
+}*/
+
 class TodoItem: Identifiable, ObservableObject{
     let id: String
     let title: String
@@ -15,14 +50,16 @@ class TodoItem: Identifiable, ObservableObject{
     let remindTime: Date?
     var completed: Bool
     var isActive: Bool
+    let priority: TodoPriority
     
-    init(id: String, title: String, desc: String, remindTime: Date?, completed: Bool, isActive: Bool) {
+    init(id: String, title: String, desc: String, remindTime: Date?, completed: Bool, isActive: Bool, priority: TodoPriority) {
         self.id = id
         self.title = title
         self.desc = desc
         self.remindTime = remindTime
         self.completed = completed
         self.isActive = isActive
+        self.priority = priority
     }
 }
 
@@ -41,7 +78,8 @@ let converter : ([String:Any]) -> TodoItem = { dictionary in
         // remindTime:  convertStringToDate(dictionary["remindTime"] as? String),
         remindTime: dictionary["remindTime"] as? String != nil ? convertStringToDate(dictionary["remindTime"] as! String) : nil,
         completed: dictionary["completed"] as! Bool,
-        isActive: dictionary["isActive"] as! Bool
+        isActive: dictionary["isActive"] as! Bool,
+        priority: dictionary["priority"] as? String != nil ? stringToPriority(prioStr: dictionary["priority"] as! String) : .Without
     )
 }
 
@@ -152,14 +190,14 @@ struct APIService {
         return dateString
     }
     
-    static func updateTodo(id: String, title: String, description: String, completed: Bool, remTime: Date?) async throws{
-        var parameters: [String: Any?] = ["title": title, "desc": description, "completed": completed, "remindTime": remTime != nil ? dateToString(date: remTime!) : nil]
+    static func updateTodo(id: String, title: String, description: String, completed: Bool, remTime: Date?, prio: TodoPriority) async throws{
+        let parameters: [String: Any?] = ["title": title, "desc": description, "completed": completed, "remindTime": remTime != nil ? dateToString(date: remTime!) : nil, "priority": prio != .Without ? prio.rawValue : nil]
         
         print("Update PARAMS")
         print(parameters)
         let database = Databases(appwriteClient)
         do{
-            let result = try await database.updateDocument(databaseId: dbId, collectionId: collId, documentId: id, data: parameters )
+            _ = try await database.updateDocument(databaseId: dbId, collectionId: collId, documentId: id, data: parameters )
             
         }catch {
             throw error

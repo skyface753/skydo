@@ -19,13 +19,16 @@ struct LoginView: View{
     // MARK: - View
     var body: some View{
         VStack(alignment: .leading, spacing: 15){
+            
             Text("SkyDo")
                 .font(.largeTitle).foregroundColor(Color.green)
                 .padding([.top, .bottom], 30)
             Image("Logo")
                 .resizable()
-                .frame(width: 300, height: 250)
+                .frame( height: 250)
+                .aspectRatio(contentMode: .fit)
                 .clipShape(Circle())
+                
                 .overlay(Circle().stroke(Color.white, lineWidth: 4))
                 .shadow(radius: 10)
                 .padding(.bottom, 50)

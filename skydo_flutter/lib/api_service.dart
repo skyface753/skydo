@@ -49,6 +49,9 @@ class ApiService {
           remindTime: item.data['remindTime'] != null
               ? DateTime.parse(item.data['remindTime'])
               : null,
+          priority: item.data['priority'] != null
+              ? todoPriorityFromString(item.data['priority'])
+              : TodoPriority.without,
         ));
       }
       // Sort todos by remindTime
@@ -116,6 +119,7 @@ class ApiService {
     required String desc,
     required bool completed,
     DateTime? remindTime,
+    required TodoPriority pritority,
   }) async {
     if (title.isEmpty) {
       return false;
@@ -131,7 +135,8 @@ class ApiService {
             'title': title,
             'desc': desc,
             'completed': completed,
-            'remindTime': remindTime?.toIso8601String()
+            'remindTime': remindTime?.toIso8601String(),
+            'priority': todoPriorityToString(pritority)
           });
       print(doc);
       return true;

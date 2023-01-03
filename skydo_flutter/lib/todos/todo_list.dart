@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:skydo_flutter/LoginPage.dart';
 import 'package:skydo_flutter/api_service.dart';
-import 'package:skydo_flutter/todos/create_todo.dart';
+import 'package:skydo_flutter/todos/single_todo.dart';
 import 'package:skydo_flutter/todos/todo_model.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
@@ -59,7 +59,7 @@ class _TodoListPageState extends State<TodoListPaage> {
       body: _buildTodos(),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          await Navigator.pushNamed(context, CreateTodoPage.routeName);
+          await Navigator.pushNamed(context, SingleTodoPage.routeName);
           setState(() {
             loadTodos();
           });
@@ -98,7 +98,7 @@ class _TodoListPageState extends State<TodoListPaage> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => CreateTodoPage(todo: todo),
+                builder: (context) => SingleTodoPage(todo: todo),
               ),
             ).then((value) {
               setState(() {

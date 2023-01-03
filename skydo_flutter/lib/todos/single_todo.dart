@@ -3,23 +3,24 @@ import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:skydo_flutter/api_service.dart';
 import 'package:skydo_flutter/todos/todo_model.dart';
 
-class CreateTodoPage extends StatefulWidget {
+class SingleTodoPage extends StatefulWidget {
   static String routeName = '/todos/create';
 
   TodoItem? todo;
-  CreateTodoPage({Key? key, this.todo}) : super(key: key);
+  SingleTodoPage({Key? key, this.todo}) : super(key: key);
 
   @override
-  _CreateTodoPageState createState() => _CreateTodoPageState();
+  _SingleTodoPageState createState() => _SingleTodoPageState();
 }
 
-class _CreateTodoPageState extends State<CreateTodoPage> {
+class _SingleTodoPageState extends State<SingleTodoPage> {
   String? itemId;
   TextEditingController _titleController = TextEditingController();
   TextEditingController _descController = TextEditingController();
   bool _completed = false;
   DateTime? _reminderDate;
   bool _withReminder = false;
+  TodoPriority _priority = TodoPriority.without;
 
   @override
   void initState() {
@@ -29,6 +30,7 @@ class _CreateTodoPageState extends State<CreateTodoPage> {
       _titleController.text = widget.todo!.title;
       _descController.text = widget.todo!.desc;
       _completed = widget.todo!.completed;
+      _priority = widget.todo!.priority;
       if (widget.todo!.remindTime != null) {
         _withReminder = true;
         _reminderDate = widget.todo!.remindTime;
@@ -60,7 +62,8 @@ class _CreateTodoPageState extends State<CreateTodoPage> {
                       title: _titleController.text,
                       desc: _descController.text,
                       remindTime: _withReminder ? _reminderDate : null,
-                      completed: _completed)) {
+                      completed: _completed,
+                      pritority: _priority)) {
                     Navigator.pop(context);
                   } else {
                     ScaffoldMessenger.of(context).showSnackBar(
@@ -173,7 +176,35 @@ class _CreateTodoPageState extends State<CreateTodoPage> {
                         ],
                       ))
                     : Container(),
+
                 SizedBox(height: 8.0),
+                // Priority
+                Container(
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('Priority: '),
+                      // Spacer
+                      DropdownButton<TodoPriority>(
+                        value: _priority,
+                        onChanged: (TodoPriority? newValue) {
+                          setState(() {
+                            _priority = newValue!;
+                          });
+                        },
+                        items: TodoPriority.values
+                            .map<DropdownMenuItem<TodoPriority>>(
+                                (TodoPriority value) {
+                          return DropdownMenuItem<TodoPriority>(
+                            value: value,
+                            child: Text(todoPriorityToString(value)),
+                          );
+                        }).toList(),
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           )),

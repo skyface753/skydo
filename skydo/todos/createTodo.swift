@@ -21,9 +21,9 @@ struct CreateTodoView: View {
             TextField(
                     "Title",
                     text: $title
-            ).padding()
+            )
                 .cornerRadius(20)
-            TextField("Description", text: $description).padding()
+            TextField("Description", text: $description)
                 .cornerRadius(20)
             DatePicker("Remind Time", selection: $remindTime)
             Button("Create") {
@@ -37,7 +37,7 @@ struct CreateTodoView: View {
                 }
             }
             errMessage != "" ? Text(errMessage) : nil
-        }
+        }.padding()
     }
 }
 

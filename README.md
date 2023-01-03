@@ -26,8 +26,9 @@ I wanted to build a simple app that I could use to learn SwiftUI. I also wanted 
 - Add, edit, and delete tasks
 - Mark tasks as complete and incomplete
 - Archive tasks
+- Task Priority (Without, Low, Medium, High)
 - Login
-- Register (Verification email sent to user just in SwiftUI version with universal links)
+- Register (Verification email sent to user only in the SwiftUI version with universal links)
 
 ## Screenshots
 

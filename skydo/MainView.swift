@@ -30,6 +30,8 @@ struct ContentView: View {
     @State private var verifySuccessed = false
     @State private var verificationMessage = ""
     
+    @State private var searchText = ""
+    
     var body: some View {
         NavigationView {
                     VStack(spacing: 20) {
@@ -40,13 +42,25 @@ struct ContentView: View {
                             Text("Nothing To Do")
                         }
                             List{
-                                ForEach(vm.todos){todo in
-                                    TodoListItem(todo: todo, reloadCallback: { todo in
-                                        Task{
-                                            await vm.getTodos()
-                                        }
-                                    })
+                                 
+                                    
+                                    /*ForEach(vm.todos){todo in
+                                        TodoListItem(todo: todo, reloadCallback: { todo in
+                                            Task{
+                                                await vm.getTodos()
+                                            }
+                                        })
+                                    }*/
+                                ForEach(searchResults) {todo in TodoListItem(todo: todo, reloadCallback: { todo in
+                                    Task{
+                                        await vm.getTodos()
+                                    }
+                                })
                                 }
+                                
+                                
+                                
+                                
                             }
                             .task {
                                 await vm.getTodos()
@@ -56,6 +70,7 @@ struct ContentView: View {
                             }
                             .listStyle(PlainListStyle())
                             .navigationTitle("Todos")
+                            .searchable(text: $searchText)
                             
                       
                             
@@ -99,7 +114,7 @@ struct ContentView: View {
                             }
                         }
                     }
-        }.padding()
+        }
             .onAppear{
                 print("On Appear")
                 Task{
@@ -155,6 +170,19 @@ struct ContentView: View {
                     }}
             }
     }
+        var searchResults: [TodoItem] {
+            if(searchText.isEmpty){
+                return vm.todos
+            }else{
+                return vm.todos.filter({ todo in
+                    if(todo.title.lowercased().contains(searchText.lowercased()) || todo.desc.lowercased().contains(searchText.lowercased())){
+                        return true
+                    }
+                    return false
+                })
+            }
+        }
+       
 }
 
 
